@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="_js/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="_js/jquery-ui.css">
+  <script type="text/javascript" src="_js/jquery-ui.min.js"></script>
+
+  <!-- Own -->
+  <link rel="stylesheet" type="text/css" href="template.css">
+  <script type="text/javascript" src="template.js"></script>
+
+  <title>Inventory System - Drag and Drop Resizable Grid by MadLittleMods</title>
+
+</head>
+
+<body>
+
+<p>Inventory:</p>
+<div class="inventory-table" id="personal-inventory">
+    <div class="inventory-row">
+        <div class="inventory-cell">
+            <div class="inventory-item grape"></div>
+        </div>
+        <div class="inventory-cell">
+            <div class="inventory-item sword1" data-item-type="weapon sword"></div>
+        </div>
+        <div class="inventory-cell">
+            <div class="inventory-item carrot"></div>
+        </div>
+        <div class="inventory-cell">
+        </div>
+        <div class="inventory-cell">
+        </div>
+    </div>
+    <div class="inventory-row">
+        <div class="inventory-cell">
+            <div id="carrot1" class="inventory-item carrot" data-item-type="food"></div>
+        </div>
+        <div class="inventory-cell">
+            <div id="meat1" class="inventory-item meat1" data-item-type="food cookable"></div>
+        </div>
+        <div class="inventory-cell">
+            <div id="meat2" class="inventory-item meat1" data-item-type="food cookable"></div>
+        </div>
+        <div class="inventory-cell"></div>
+        <div class="inventory-cell"></div>
+    </div>
+    <div class="inventory-row">
+        <div class="inventory-cell">
+            <div id="axe" class="inventory-item axe1" data-item-type="weapon axe"></div>
+        </div>
+        <div class="inventory-cell">
+        </div>
+        <div class="inventory-cell">
+            <div id="grape" class="inventory-item grape" data-item-type="food"></div>
+        </div>
+        <div class="inventory-cell"></div>
+        <div class="inventory-cell"></div>
+    </div>
+</div>
+
+<br>
+
+<p>Chest:</p>
+<div class="inventory-table">
+    <div class="inventory-row">
+        <div class="inventory-cell">
+            <div class="inventory-item grape" data-item-type="food"></div>
+        </div>
+        <div class="inventory-cell">
+            <div class="inventory-item sword1" data-item-type="weapon sword"></div>
+        </div>
+        <div class="inventory-cell">
+            <div class="inventory-item carrot" data-item-type="food"></div>
+        </div>
+        <div class="inventory-cell">
+            <div class="inventory-item fire-sword1" data-item-type="weapon sword enchanted"></div>
+        </div>
+        <div class="inventory-cell">
+            <div class="inventory-item fire-bow1" data-item-type="weapon bow enchanted"></div>
+        </div>
+    </div>
+    <div class="inventory-row">
+        <div class="inventory-cell">
+            <div class="inventory-item carrot" data-item-type="food"></div>
+        </div>
+        <div class="inventory-cell">
+            <div class="inventory-item fire-axe1" data-item-type="weapon axe enchanted"></div>
+        </div>
+        <div class="inventory-cell"></div>
+        <div class="inventory-cell"></div>
+        <div class="inventory-cell"></div>
+    </div>
+</div>
+
+<br>
+
+<p>Oven (Cook food):</p>
+<div class="inventory-table" data-item-filter-whitelist="cookable">
+    <div class="inventory-row">
+        <div class="inventory-cell">
+        </div>
+        <div class="inventory-cell">
+        </div>
+    </div>
+    <div class="inventory-row">
+        <div class="inventory-cell">
+        </div>
+        <div class="inventory-cell">
+        </div>
+    </div>
+</div>
+
+<br>
+
+<p>Forge (Only enchanted weapons):</p>
+<div class="inventory-table" data-item-filter-whitelist="weapon+enchanted" data-item-filter-blacklist="axe">
+    <div class="inventory-row">
+        <div class="inventory-cell">
+            <div class="inventory-item fire-bow1" data-item-type="weapon bow enchanted"></div>
+        </div>
+        <div class="inventory-cell">
+        </div>
+    </div>
+    <div class="inventory-row">
+        <div class="inventory-cell">
+        </div>
+        <div class="inventory-cell">
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<button type="button" onclick="">Inventory contents</button>
+<button type="button">Chest contents</button>
+<button type="button">Oven contents</button>
+<button type="button">Forge contents</button>
+
+
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "GQUy6"
+      }], "*")
+    }
+  </script>
+
+</body>
+
+</html>
